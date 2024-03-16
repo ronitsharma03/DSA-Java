@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        funRev(5);
+        funBoth(5);
     }
 
     // function to print from n to 1
@@ -22,6 +22,14 @@ public class Main {
         System.out.println(n);
     }
 
-}
+    static void funBoth(int n) {
+        if (n == 0) {
+            return;
+        }
+        System.out.println(n);
+        funRev(n - 1);
+        System.out.println(n);
+    }
 
 }
+
