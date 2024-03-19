@@ -1,7 +1,7 @@
 public class GCD_HCF_LCM {
     public static void main(String[] args) {
-        int n1 = 3;
-        int n2 = 9;
+        int n1 = 2;
+        int n2 = 7;
         int ans1 = GCD(n1, n2);
         int ans2 = LCM(n1, n2, ans1);
         System.out.println("GCD("+n1+","+n2+") = "+ans1);
