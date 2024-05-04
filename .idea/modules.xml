@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Backtracking/Backtracking.iml" filepath="$PROJECT_DIR$/Backtracking/Backtracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bit manipulation/Bit manipulation.iml" filepath="$PROJECT_DIR$/Bit manipulation/Bit manipulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DSA-Java-main.iml" filepath="$PROJECT_DIR$/DSA-Java-main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Maze_Backtracking/Maze_Backtracking.iml" filepath="$PROJECT_DIR$/Maze_Backtracking/Maze_Backtracking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MergeSort/MergeSort.iml" filepath="$PROJECT_DIR$/MergeSort/MergeSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Object_Oriented_programming/Object_Oriented_programming.iml" filepath="$PROJECT_DIR$/Object_Oriented_programming/Object_Oriented_programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Patterns_Bubble_Selectionsort/Patterns_Bubble_Selectionsort.iml" filepath="$PROJECT_DIR$/Patterns_Bubble_Selectionsort/Patterns_Bubble_Selectionsort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Permutations/Permutations.iml" filepath="$PROJECT_DIR$/Permutations/Permutations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuickSort/QuickSort.iml" filepath="$PROJECT_DIR$/QuickSort/QuickSort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion Arrays/Recursion Arrays.iml" filepath="$PROJECT_DIR$/Recursion Arrays/Recursion Arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion questions/Recursion questions.iml" filepath="$PROJECT_DIR$/Recursion questions/Recursion questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Strings/Strings.iml" filepath="$PROJECT_DIR$/Strings/Strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion/binary_search_recursion/binary_search_recursion.iml" filepath="$PROJECT_DIR$/Recursion/binary_search_recursion/binary_search_recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion/recursion_0/recursion_0.iml" filepath="$PROJECT_DIR$/Recursion/recursion_0/recursion_0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Recursion/recursion_1/recursion_1.iml" filepath="$PROJECT_DIR$/Recursion/recursion_1/recursion_1.iml" />
+    </modules>
+  </component>
+</project>
