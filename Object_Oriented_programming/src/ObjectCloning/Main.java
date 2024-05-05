@@ -1,5 +1,7 @@
 package ObjectCloning;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {
         Human ronit = new Human("Ronit", 20);
@@ -9,5 +11,11 @@ public class Main {
 
         Human clone = (Human) (ronit.clone());
         System.out.println(clone.age + " " + clone.name);
+
+        System.out.println(Arrays.toString(clone.arr));
+        // If we changes the object cloned's array
+        clone.arr[0] = 100;
+        // Then the object who got cloned their variables will also change -> this is known as shallow copying
+        System.out.println(Arrays.toString(ronit.arr));
     }
 }
