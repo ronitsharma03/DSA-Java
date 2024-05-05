@@ -1,6 +1,7 @@
 package Generics.Comparing;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +16,24 @@ public class Main {
         Student[] arr = {ronit, rahul, amit3, amit2, amit1, amit};
 
         System.out.println(Arrays.toString(arr));
-        Arrays.sort(arr);
+        // Arrays.sort() method can take another parameter for comparison
+        // this will sort it according to their marks
+        // Now it is sorting it according to increasing order to sort it in decreasing order add - to return
+//        Arrays.sort(arr, new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return (int) (o1.marks - o2.marks);
+//                // to sort it in descending order
+////                return -(int) (o1.marks - o2.marks);
+//            }
+//        });
+
+        // In the form of lambda expressions -> easy and less syntax code
+        Arrays.sort(arr, (o1, o2) -> {
+            return (int) (o1.marks - o2.marks);
+            // to sort it in descending order
+//                return -(int) (o1.marks - o2.marks);
+        });
         System.out.println(Arrays.toString(arr));
 
 
