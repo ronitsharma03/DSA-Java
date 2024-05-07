@@ -5,11 +5,16 @@ public class Main {
     // Public, static and final
     // since its final you can create child enums
     // type is Week
-    enum Week {
-        Monday, Tuesday, Wednesday, Thursday, Friday, Saturday,Sunday
+    enum Week implements A{
+        Monday, Tuesday, Wednesday, Thursday, Friday, Saturday,Sunday;
 
         Week(){
             System.out.println("Constructor called for " + this);
+        }
+
+        @Override
+        public void hello() {
+            System.out.println("Hello from interface ");
         }
         // this constructor gets called for every object.. why so?
         // We dont want to create new objects
@@ -22,6 +27,7 @@ public class Main {
     public static void main(String[] args) {
         Week week;
         week = Week.Sunday;
+        week.hello();
 
         for (Week day: Week.values()){
             System.out.println(day);
