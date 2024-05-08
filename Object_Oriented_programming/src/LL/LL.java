@@ -10,6 +10,18 @@ public class LL {
     public LL(){
         this.size = 0;
     }
+
+    public void insertAtFirst(int value){
+        Node node = new Node(value);
+        node.next = head;
+        head = node;
+
+        if(tail == null){
+            tail = head;
+        }
+        size += 1;
+
+    }
     private class Node{
         private int value;
         private Node next;
