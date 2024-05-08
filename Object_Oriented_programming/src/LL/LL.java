@@ -22,6 +22,17 @@ public class LL {
         size += 1;
 
     }
+
+    public void display(){
+        Node temp = head;
+
+        System.out.print("HEAD -> ");
+        while(temp != null){
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
     private class Node{
         private int value;
         private Node next;
