@@ -36,13 +36,34 @@ public class LL {
     public void display(){
         Node temp = head;
 
-        System.out.print("HEAD -> ");
         while(temp != null){
             System.out.print(temp.value + " -> ");
             temp = temp.next;
         }
         System.out.println("END");
     }
+    public void insert(int val, int index) throws Exception{
+        if(index == 0){
+            insertAtFirst(val);
+            return;
+        }
+        if(index > size){
+            throw new Exception("Index is out of LL size");
+        }
+        if(index == size){
+            insertAtEnd(val);
+            return;
+        }
+
+        Node temp = head;
+        for (int i = 1; i < index; i++){
+            temp = temp.next;
+        }
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+        size += 1;
+    }
+
     private class Node{
         private int value;
         private Node next;
