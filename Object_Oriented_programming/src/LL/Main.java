@@ -10,8 +10,9 @@ public class Main{
         list.insertAtFirst(5);
         list.insertAtFirst(4);
         list.insertAtEnd(10);
-        list.insert(33, 15);
-
+        list.insert(33, 0);
+        list.display();
+        System.out.println(list.deleteFirst() + " is deleted");
         list.display();
     }
 }
