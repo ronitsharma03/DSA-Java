@@ -99,6 +99,18 @@ public class LL {
         previous.next = previous.next.next;
         return val;
     }
+
+    public Node findNode(int value){
+        Node node = head;
+        while(node != null){
+            if(node.value == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
     public Node get(int index){
         Node node = head;
         for(int i = 0; i < index; i++){

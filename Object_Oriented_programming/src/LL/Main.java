@@ -18,5 +18,6 @@ public class Main{
         list.display();
         System.out.println(list.delete(2) + " is deleted");
         list.display();
+        System.out.println(list.findNode(7));
     }
 }
