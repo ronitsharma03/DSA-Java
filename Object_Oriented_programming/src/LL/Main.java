@@ -14,5 +14,7 @@ public class Main{
         list.display();
         System.out.println(list.deleteFirst() + " is deleted");
         list.display();
+        System.out.println(list.deleteLast() + " is deleted");
+        list.display();
     }
 }
