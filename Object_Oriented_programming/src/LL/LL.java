@@ -79,16 +79,29 @@ public class LL {
         if(size <= 1){
             return deleteFirst();
         }
-        Node secondLast = get(size - 1);
+        Node secondLast = get(size - 2);
         int value = tail.value;
         tail = secondLast;
         tail.next = null;
         return value;
     }
 
+    public int delete(int index){
+        if(index == size){
+            return deleteLast();
+        }
+        if(index == 0){
+            return deleteFirst();
+        }
+
+        Node previous = get(index - 1);
+        int val = previous.next.value;
+        previous.next = previous.next.next;
+        return val;
+    }
     public Node get(int index){
         Node node = head;
-        for(int i = 1; i < index; i++){
+        for(int i = 0; i < index; i++){
             node = node.next;
         }
         return node;
