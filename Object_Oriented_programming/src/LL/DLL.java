@@ -13,6 +13,25 @@ public class DLL {
         head = node;
     }
 
+    public void insertAtLast(int val){
+        Node node = new Node(val);
+        Node last = head;
+        node.next = null;
+
+        if(head == null){
+            node.prev = null;
+            head = node;
+            return;
+        }
+
+        while(last.next != null){
+            last = last.next;
+        }
+
+        last.next = node;
+        node.prev = last;
+
+    }
     public void display(){
         Node node = head;
         // Maintaining the last node
@@ -29,7 +48,7 @@ public class DLL {
             System.out.print(lastNode.val + " -> ");
             lastNode = lastNode.prev;
         }
-        System.out.println("END");
+        System.out.println("START");
     }
 
  private class Node{
