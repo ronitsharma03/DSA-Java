@@ -30,6 +30,7 @@ public class Main{
         list.insertAtFirst(5);
         list.insertAtFirst(4);
         list.insertAtLast(99);
+        list.insert(9, 66);
         list.display();
     }
 }
