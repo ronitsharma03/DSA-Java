@@ -14,10 +14,20 @@ public class DLL {
     }
 
     public void display(){
-        Node temp = head;
-        while(temp != null){
-            System.out.print(temp.val + " -> ");
-            temp = temp.next;
+        Node node = head;
+        // Maintaining the last node
+        Node lastNode = null;
+        while(node != null){
+            System.out.print(node.val + " -> ");
+            // When the loop ends the lastNode will be pointing to the last node in DLL
+            lastNode = node;
+            node = node.next;
+        }
+        System.out.println("END");
+        System.out.println("Printing in reverse - ");
+        while (lastNode != null){
+            System.out.print(lastNode.val + " -> ");
+            lastNode = lastNode.prev;
         }
         System.out.println("END");
     }
