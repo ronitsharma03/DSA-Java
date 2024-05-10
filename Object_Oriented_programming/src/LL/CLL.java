@@ -33,6 +33,29 @@ public class CLL {
         System.out.println("HEAD");
     }
 
+    public void delete(int value){
+        Node node = head;
+        if(node == null){
+            return;
+        }
+
+        if(node.value == value){
+            head = head.next;
+            tail.next = head;
+            return;
+        }
+
+        do {
+            Node n = node.next;
+            if (n.value == value){
+                node.next = n.next;
+                break;
+            }
+            node = node.next;
+        }while(node != head);
+
+    }
+
     private class Node{
         private int value;
         private Node next;
