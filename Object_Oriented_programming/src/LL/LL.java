@@ -50,6 +50,21 @@ public class LL {
         return node;
     }
 
+    public void removeDup(){
+        Node temp = head;
+//        Node prev = temp;
+//        temp = temp.next;
+        while(temp.next != null){
+            if(temp.value == temp.next.value){
+                temp.next = temp.next.next;
+            }else {
+                temp = temp.next;
+            }
+        }
+        tail = temp;
+        tail.next = null;
+    }
+
     public void display(){
         Node temp = head;
 
