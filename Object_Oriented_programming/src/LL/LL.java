@@ -50,10 +50,62 @@ public class LL {
         return node;
     }
 
+    public int lengthCycle(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(fast == slow){
+                // calculate the length
+                Node temp = slow;
+                int length = 0;
+                do{
+                    temp = temp.next;
+                }while(temp != slow);
+                return length;
+            }
+        }
+        return 0;
+    }
+        public Node detectCycle(Node head) {
+            int length = 0;
+
+            Node slow = head;
+            Node fast = head;
+
+            while(fast != null && fast.next != null){
+                slow = slow.next;
+                fast = fast.next.next;
+
+                if(fast == slow){
+                    length = lengthCycle(slow);
+                    break;
+                }
+            }
+            // find the start node
+            Node first = head;
+            Node second = head;
+
+            while(length > 0){
+                second = second.next;
+                length--;
+            }
+
+            // Keep moving both forward and they will meet at start
+            while(first != second){
+                first = first.next;
+                second = second.next;
+            }
+            return second;
+        }
+
     public void removeDup(){
         Node temp = head;
 //        Node prev = temp;
-//        temp = temp.next;
+//        temp = temp.ne xt;
         while(temp.next != null){
             if(temp.value == temp.next.value){
                 temp.next = temp.next.next;
