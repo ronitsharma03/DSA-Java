@@ -70,6 +70,19 @@ public class LL {
         }
         return 0;
     }
+
+    // https://leetcode.com/problems/middle-of-the-linked-list/
+    public Node middleNode(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
         public Node detectCycle(Node head) {
             int length = 0;
 
