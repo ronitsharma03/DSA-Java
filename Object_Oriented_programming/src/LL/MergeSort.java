@@ -5,7 +5,7 @@ public class MergeSort {
     // Sort the two LL and merge them
     // Using merge sort
     public ListNode sortList(ListNode head) {
-        if(head == null || head.next == null){
+        if(head == null || head.next == null){ // base condition
             return head;
         }
 
@@ -26,7 +26,7 @@ public class MergeSort {
                 tail = tail.next;
             }else{
                 tail.next = list2;
-                list1 = list2.next;
+                list2 = list2.next;
                 tail = tail.next;
             }
         }

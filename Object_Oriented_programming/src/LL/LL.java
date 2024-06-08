@@ -197,6 +197,19 @@ public class LL {
         return val;
     }
 
+    //reversing the LL using recurrsion
+    public void reverseLL(Node node){
+        if(node == tail){
+            head = tail;
+            return;
+        }
+
+        reverseLL(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
     public Node findNode(int value){
         Node node = head;
         while(node != null){
@@ -229,6 +242,8 @@ public class LL {
             this.next = next;
         }
     }
+
+
 
 
 }

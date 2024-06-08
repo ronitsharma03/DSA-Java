@@ -17,9 +17,10 @@ public class Main{
         list.insertAtEnd(4);
 //        list.insert(33, 0);
         list.display();
-        list.removeDup();
+//        list.removeDup();
 //        list.insertRec(20, 0);
         list.display();
+        list.reverseLL();
 //        System.out.println(list.deleteFirst() + " is deleted");
 //        list.display();
 //        System.out.println(list.deleteLast() + " is deleted");

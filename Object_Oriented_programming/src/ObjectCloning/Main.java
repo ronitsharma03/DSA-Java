@@ -15,7 +15,9 @@ public class Main {
         System.out.println(Arrays.toString(clone.arr));
         // If we changes the object cloned's array
         clone.arr[0] = 100;
+        System.out.println(Arrays.toString(clone.arr));
         // Then the object who got cloned their variables will also change -> this is known as shallow copying
+        // Using deep copy this won't change
         System.out.println(Arrays.toString(ronit.arr));
     }
 }

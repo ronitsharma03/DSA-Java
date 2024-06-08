@@ -4,6 +4,7 @@ public class HappyNumber {
         System.out.println(isHappy(12));
     }
 
+
     public static boolean isHappy(int n){
         int slow = n;
         int fast = n;
