@@ -1,8 +1,6 @@
 package Stacks;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class InbuiltExample {
@@ -33,5 +31,8 @@ public class InbuiltExample {
         System.out.println(queue.remove());
         System.out.println(queue.remove());
 //        System.out.println(queue.remove());  Gives exception if the queue is already empty
+
+        Deque<Integer> deque = new ArrayDeque<>();
+
     }
 }
