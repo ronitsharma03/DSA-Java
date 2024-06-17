@@ -71,6 +71,43 @@ public class BinaryTree {
         }
         prettyDisplay(node.left, level + 1);
     }
+    public void preorder(){
+        preorder(root);
+    }
+
+    public void InOrder(){
+        InOrder(root);
+    }
+    public void postOrder(){
+        postOrder(root);
+    }
+
+    private void preorder(Node node){
+        if(node == null){
+            return;
+        }
+        System.out.print(node.value + " ");
+        preorder(node.left);
+        preorder(node.right);
+    }
+
+    private void InOrder(Node node){
+        if(node == null){
+            return;
+        }
+        InOrder(node.left);
+        System.out.print(node.value + " ");
+        InOrder(node.right);
+    }
+
+    private void postOrder(Node node){
+        if(node == null){
+            return;
+        }
+        preorder(node.left);
+        preorder(node.right);
+        System.out.print(node.value + " ");
+    }
 
     // Pretty Tree Display
 //    public void prettyTreeDisplay() {
