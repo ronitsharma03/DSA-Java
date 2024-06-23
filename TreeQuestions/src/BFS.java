@@ -108,6 +108,7 @@ public class BFS {
                     if (currentNode.right != null) deq.addFirst(currentNode.right);
                 }
             }
+            reverse = !reverse;
             list.add(currentLevel);
         }
         return list;
