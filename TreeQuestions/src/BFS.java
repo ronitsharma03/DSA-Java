@@ -114,10 +114,32 @@ public class BFS {
         return list;
     }
 
+    // Leetcode - 116
+    // https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+    public TreeNode connect(TreeNode root) {
+        if(root == null) return null;
+
+        TreeNode leftMost = root;
+
+        while(leftMost.left != null){
+            TreeNode currentNode = leftMost;
+            while(currentNode != null){
+                currentNode.left.next = currentNode.right;
+                if(currentNode.next != null){
+                    currentNode.right.next = currentNode.next.left;
+                }
+                currentNode = currentNode.next;
+            }
+            leftMost = leftMost.left;
+        }
+        return root;
+    }
+
     public class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
+        TreeNode next;
         private TreeNode root;
 
         public TreeNode(TreeNode node){
