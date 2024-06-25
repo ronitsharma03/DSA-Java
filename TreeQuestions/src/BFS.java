@@ -63,6 +63,61 @@ public class BFS {
         return result;
     }
 
+
+//    Leetcode problem: 993 -> https://leetcode.com/problems/cousins-in-binary-tree/description/
+    public boolean isCousin(TreeNode root, int x, int y){
+        TreeNode xx = findNode(root, x);
+        TreeNode yy = findNode(root, y);
+
+        return (
+                (level(root, xx, 0) == level(root, yy, 0)) && (!isSibling(root, xx, yy))
+                );
+    }
+
+    public TreeNode findNode(TreeNode node, int x){
+        if(node == null){
+            return null;
+        }
+
+        if(node.val == x){
+            return node;
+        }
+        TreeNode n = findNode(node.left, x);
+        if(n != null){
+            return n;
+        }
+
+        return findNode(node.right, x);
+    }
+
+    public boolean isSibling(TreeNode node, TreeNode y, TreeNode z){
+        if(node == null){
+            return false;
+        }
+
+        return (
+                (node.left == y && node.right == z) || (node.left == z && node.right == y) || isSibling(node.left, y, z) || isSibling(node.right, y, z)
+                );
+    }
+
+    public int level(TreeNode node, TreeNode x, int lev){
+        if(node == null){
+            return 0;
+        }
+
+        if(node == x){
+            return lev;
+        }
+
+        int level = level(node.left, x, lev+1);
+        if(level != 0){
+            return level;
+        }
+
+        return level(node.right, x, lev+1);
+    }
+
+
     public TreeNode findSuccessor(TreeNode root, int key){
         if(root == null){
             return null;
