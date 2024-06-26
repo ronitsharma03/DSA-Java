@@ -167,6 +167,25 @@ public class BFS {
         }
     }
 
+    // 543 -> https://leetcode.com/problems/diameter-of-binary-tree/description/
+    int diameter = 0;
+    public int diameterOfBinaryTree(TreeNode root) {
+        height(root);
+        return diameter;
+    }
+
+    public int height(TreeNode node){
+        if(node == null){
+             return 0;
+        }
+
+        int leftHeight = height(node.left);
+        int rightHeight = height(node.right);
+
+        int d = leftHeight + rightHeight;
+        diameter = Math.max(d, diameter);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
 
     public TreeNode findSuccessor(TreeNode root, int key){
         if(root == null){
