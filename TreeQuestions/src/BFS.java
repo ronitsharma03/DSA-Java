@@ -167,6 +167,18 @@ public class BFS {
         }
     }
 
+    // 226 -> https://leetcode.com/problems/invert-binary-tree/
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null) return null;
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+
+        root.left = right;
+        root.right = left;
+
+        return root;
+    }
+
     // 543 -> https://leetcode.com/problems/diameter-of-binary-tree/description/
     int diameter = 0;
     public int diameterOfBinaryTree(TreeNode root) {
