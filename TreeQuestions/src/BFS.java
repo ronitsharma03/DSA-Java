@@ -192,6 +192,24 @@ public class BFS {
         return root;
     }
 
+    //    114 -> https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+
+    public void flatten(TreeNode root){
+        TreeNode current = root;
+        while(current != null){
+            if(current.left != null){
+                TreeNode temp = current.left;
+                while(temp.right != null){
+                    temp = temp.right;
+                }
+                temp.right = current.left;
+                current.right = current.left;
+                current.left = null;
+            }
+            current = current.right;
+        }
+    }
+
     //    108 - > https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 
     public TreeNode sortedArrayToBST(int[] nums){
