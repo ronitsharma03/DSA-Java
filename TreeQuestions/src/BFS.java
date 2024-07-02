@@ -167,6 +167,19 @@ public class BFS {
         }
     }
 
+    // 104 -> https://leetcode.com/problems/maximum-depth-of-binary-tree/
+    public int maxDepth(TreeNode root){
+        if (root == null){
+            return 0;
+        }
+
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+
+        return 1 + Math.max(left, right);
+
+    }
+
     // 226 -> https://leetcode.com/problems/invert-binary-tree/
     public TreeNode invertTree(TreeNode root) {
         if(root == null) return null;
