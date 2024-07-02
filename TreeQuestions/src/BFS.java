@@ -192,6 +192,28 @@ public class BFS {
         return root;
     }
 
+    //    108 - > https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
+
+    public TreeNode sortedArrayToBST(int[] nums){
+        if(nums == null || nums.length == 0){
+            return null;
+        }
+
+        return populateSorted(nums, 0, nums.length - 1);
+    }
+
+    private TreeNode populateSorted(int[] nums, int i, int i1) {
+        if (i < i1) {
+            return null;
+        }
+        int mid = i + (i1 - i)/2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = populateSorted(nums, i, mid - 1);
+        root.right = populateSorted(nums, mid + 1, i1);
+        return root;
+    }
+
+
     // 543 -> https://leetcode.com/problems/diameter-of-binary-tree/description/
     int diameter = 0;
     public int diameterOfBinaryTree(TreeNode root) {
@@ -293,6 +315,10 @@ public class BFS {
 
         public TreeNode(TreeNode node){
             this.root = node;
+        }
+
+        public TreeNode(int val){
+            this.val = val;
         }
     }
 }
