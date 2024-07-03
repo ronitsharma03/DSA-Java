@@ -210,6 +210,30 @@ public class BFS {
         }
     }
 
+    // 98 -> https://leetcode.com/problems/validate-binary-search-tree/
+    public boolean isValidBST(TreeNode root) {
+        return helper(root, null, null);
+    }
+
+    public boolean helper(TreeNode node, Integer low, Integer high){
+        if(node == null){
+            return true;
+        }
+
+        if(low != null && node.val <= low){
+            return false;
+        }
+
+        if(high != null && node.val >= high){
+            return false;
+        }
+
+        boolean leftSubTree = helper(node.left, low, node.val);
+        boolean rightSubTree = helper(node.right, node.val, high);
+
+        return leftSubTree && rightSubTree;
+    }
+
     //    108 - > https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 
     public TreeNode sortedArrayToBST(int[] nums){
