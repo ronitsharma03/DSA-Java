@@ -302,6 +302,63 @@ public class BFS {
         return node;
     }
 
+    //    297 -> https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
+    public String serialize(TreeNode root) {
+        if (root == null) {
+            return "";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            if (node == null) {
+                sb.append("null,");
+            } else {
+                sb.append(node.val).append(",");
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+        }
+
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        if (data == null || data.isEmpty()) {
+            return null;
+        }
+
+        String[] nodes = data.split(",");
+        TreeNode root = new TreeNode(Integer.parseInt(nodes[0]));
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        int i = 1;
+        while (!queue.isEmpty()) {
+            TreeNode parent = queue.poll();
+
+            if (!nodes[i].equals("null")) {
+                TreeNode left = new TreeNode(Integer.parseInt(nodes[i]));
+                parent.left = left;
+                queue.add(left);
+            }
+            i++;
+
+            if (!nodes[i].equals("null")) {
+                TreeNode right = new TreeNode(Integer.parseInt(nodes[i]));
+                parent.right = right;
+                queue.add(right);
+            }
+            i++;
+        }
+
+        return root;
+    }
+
 
     //    236 -> https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
