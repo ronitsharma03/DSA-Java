@@ -319,6 +319,27 @@ public class BFS {
         return helper2(node.left, sum) + helper2(node.right, sum);
     }
 
+    // 124 - > https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+    int ans = Integer.MIN_VALUE;
+    public int maxPathSum(TreeNode root) {
+        helper3(root);
+        return ans;
+    }
+    public int helper3(TreeNode node){
+        if(node == null){
+            return 0;
+        }
+
+        int left = helper3(node.left);
+        int right = helper3(node.right);
+        left = Math.max(0, left);
+        right = Math.max(0, right);
+
+        int pathSum = left + right + node.val;
+        ans = Math.max(ans, pathSum);
+
+        return Math.max(left,  right) + node.val;
+    }
     // 112 -> https://leetcode.com/problems/path-sum/
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if(root == null){
