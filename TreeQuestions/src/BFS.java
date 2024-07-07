@@ -340,6 +340,8 @@ public class BFS {
 
         return Math.max(left,  right) + node.val;
     }
+
+
     // 112 -> https://leetcode.com/problems/path-sum/
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if(root == null){
