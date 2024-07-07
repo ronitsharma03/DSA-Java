@@ -302,6 +302,17 @@ public class BFS {
         return node;
     }
 
+    // 112 -> https://leetcode.com/problems/path-sum/
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if(root == null){
+            return false;
+        }
+        if(root.val == targetSum && root.left == null && root.right == null){
+            return true;
+        }
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+    }
+
     //    297 -> https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
     public String serialize(TreeNode root) {
         if (root == null) {
