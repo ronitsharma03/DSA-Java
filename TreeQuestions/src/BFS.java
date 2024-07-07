@@ -302,6 +302,23 @@ public class BFS {
         return node;
     }
 
+//    129 - > https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
+    public int sumNumbers(TreeNode root) {
+        return helper2(root, 0);
+    }
+    public int helper2(TreeNode node, int sum){
+        if(node == null){
+            return 0;
+        }
+
+        sum = sum * 10 + node.val;
+
+        if(node.left == null && node.right == null){
+            return sum;
+        }
+        return helper2(node.left, sum) + helper2(node.right, sum);
+    }
+
     // 112 -> https://leetcode.com/problems/path-sum/
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if(root == null){
