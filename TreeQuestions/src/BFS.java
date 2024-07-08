@@ -342,6 +342,28 @@ public class BFS {
     }
 
 
+    // Valid path in the tree
+    public boolean validPath(TreeNode root, int[] arr){
+        if(root == null){
+            return arr.length == 0;
+        }
+        return helper4(root, arr, 0);
+    }
+
+    public boolean helper4(TreeNode node, int[] arr, int index){
+        if(node == null){
+            return false;
+        }
+        if(index >= arr.length || node.val != arr[index]){
+            return false;
+        }
+        if(node.left == null && node.right == null && index == arr.length - 1){
+            return true;
+        }
+        return helper4(node.left, arr, index+1) || helper4(node.right, arr, index+1);
+    }
+
+
     // 112 -> https://leetcode.com/problems/path-sum/
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if(root == null){
