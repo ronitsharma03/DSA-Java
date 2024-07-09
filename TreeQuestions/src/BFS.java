@@ -341,6 +341,38 @@ public class BFS {
         return Math.max(left,  right) + node.val;
     }
 
+    // Pathsum exists in the binary tree
+    public int ValidPathSum(TreeNode root, int sum){
+        List<Integer> path = new LinkedList<>();
+        return helpers(root, sum, path);
+    }
+
+    public int helpers(TreeNode node, int sum, List<Integer> path){
+        if(node == null){
+            return 0;
+        }
+        path.add(node.val);
+        int count = 0;
+        int s = 0;
+
+        // how many paths can be extracted
+        ListIterator<Integer> itr = path.listIterator(path.size());
+        while(itr.hasPrevious()){
+            s += itr.previous();
+
+            if(s == sum){
+                count++;
+            }
+        }
+
+        count += helpers(node.left, sum, path) + helpers(node.right, sum, path);
+
+        // Backtrack
+        path.remove(path.size() - 1);
+
+        return count;
+    }
+
 
     // Valid path in the tree
     public boolean validPath(TreeNode root, int[] arr){
