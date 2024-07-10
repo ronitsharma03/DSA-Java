@@ -374,6 +374,27 @@ public class BFS {
     }
 
 
+    //   DFS using the Stacks
+    public void DFSwithStack(TreeNode root){
+        if(root == null){
+            return;
+        }
+        Stack<TreeNode> st = new Stack<>();
+        st.push(root);
+        while(!st.isEmpty()){
+            TreeNode removed = st.pop();
+            System.out.println("Removed nodee = " + removed.val + " ");
+            if(removed.right != null){
+                st.push(root.left);
+            }
+            if(removed.left != null){
+                st.push(root.left);
+            }
+
+        }
+    }
+
+
     // Valid path in the tree
     public boolean validPath(TreeNode root, int[] arr){
         if(root == null){
