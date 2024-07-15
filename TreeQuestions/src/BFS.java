@@ -385,7 +385,7 @@ public class BFS {
             TreeNode removed = st.pop();
             System.out.println("Removed nodee = " + removed.val + " ");
             if(removed.right != null){
-                st.push(root.left);
+                st.push(root.right);
             }
             if(removed.left != null){
                 st.push(root.left);
