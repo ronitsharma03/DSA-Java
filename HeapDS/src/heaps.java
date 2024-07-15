@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class heaps<T extends Comparable<T>> {
     private ArrayList<T> list;
 
-    private heaps(){
+    public heaps(){
         list = new ArrayList<>();
     }
 
@@ -49,7 +49,7 @@ public class heaps<T extends Comparable<T>> {
         }
     }
 
-    private T remove() throws Exception{
+    public T remove() throws Exception{
         // If the heap is empty throws an exception
         if(list.isEmpty()){
             throw new Exception("Removing from the empty heap!");
@@ -94,6 +94,15 @@ public class heaps<T extends Comparable<T>> {
         }
         // if the min is equal to the index it means the tree is just fine it dont need any further operations
 
+    }
+
+    public ArrayList<T> heapSort() throws Exception{
+        ArrayList<T> data = new ArrayList<>();
+
+        while(!list.isEmpty()){
+            data.add(this.remove());
+        }
+        return data;
     }
 
 }
