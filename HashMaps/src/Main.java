@@ -1,6 +1,3 @@
-
-import javax.swing.text.html.parser.Entity;
-import java.util.*;
 import java.util.HashMap;
 
 public class Main {
@@ -40,8 +37,13 @@ public class Main {
     }
     }
     public static void main(String[] args) {
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put("ronit", 9);
-        System.out.println(map);
+//        HashMap<String,  Integer> map = new HashMap<>();
+//        map.put("ronit", 9);
+//        System.out.println(map);
+        HashMapFinal<String, String> mapp = new HashMapFinal<>();
+        mapp.put("Ronit", "A man");
+        mapp.put("mercedes", "Fav car");
+        mapp.put("Bmw", "Liked car");
+        System.out.println(mapp);
     }
 }
