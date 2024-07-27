@@ -12,12 +12,14 @@ public class Main {
             return;
         }
 
-        int max = arr[0];
-        for(int num: arr){
-            if(num > max){
-                max = num;
-            }
-        }
+//        int max = arr[0];
+//        for(int num: arr){
+//            if(num > max){
+//                max = num;
+//            }
+//        }
+        // collection framework methods
+        int max = Arrays.stream(arr).max().getAsInt();
 
         int[] freqArray = new int[max+1];
         for (int num: arr){
