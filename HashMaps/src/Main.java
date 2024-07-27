@@ -40,10 +40,13 @@ public class Main {
 //        HashMap<String,  Integer> map = new HashMap<>();
 //        map.put("ronit", 9);
 //        System.out.println(map);
-        HashMapFinal<String, String> mapp = new HashMapFinal<>();
-        mapp.put("Ronit", "A man");
-        mapp.put("mercedes", "Fav car");
-        mapp.put("Bmw", "Liked car");
-        System.out.println(mapp);
+//        HashMapFinal<String, String> mapp = new HashMapFinal<>();
+//        mapp.put("Ronit", "A man");
+//        mapp.put("mercedes", "Fav car");
+//        mapp.put("Bmw", "Liked car");
+//        System.out.println(mapp);
+
+        KarpRabin alg = new KarpRabin();
+        alg.search("Peekabooromrompeeka", "romrom");
     }
 }
