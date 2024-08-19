@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -87,7 +86,7 @@ public class HuffmanEncoder {
             key += (code.charAt(i));
             if(decoder.containsKey(key)){
                 ans.append(decoder.get(key));
-                key = ""; 
+                key = "";
             }
         }
         return ans.toString();
